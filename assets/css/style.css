@@ -1,34 +1,50 @@
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  /*  background-color: #FAD8A9; */
+    padding: 30px; 
+}
+
 #title {
     color: brown;
     text-align: center;
     font-size: 100px;
-    position: relative;
-    top: 10%;
-}
-
-.ui.small.image {
-    position: absolute;
-    left: 32%;
 }
 
 header {
-    background-color: #FAD8A9;
+    background-image: url(../images/hamburger.jpg);
+  /*  background-color: #FAD8A9; */
     padding: 20px;
 }
 
-.ui.header { 
-    padding: 10px;
+.ui.menu {
+   background-color: rgb(53, 100, 29);
 }
 
+
 #menuOptionsHeader {
-    color: black;
+    color: brown;
     font-size: 50px;
-    padding: 5px;
 }
 
 .menuOptions {
-    background-image: url(../images/redgingham.jpg);
+    background-image: url(../images/hamburgerB.jpg);
+    /* background-color: #FAD8A9; */
     text-align: center;
-    color: black;
-    font-size: 35px;
+    color: rgb(0, 4, 48);;
+    font-size: 30px;
+}
+
+main > section {
+    padding: 20px;
+}
+
+.options {
+    background-color:antiquewhite;
+
+}
+
+.ui.header {
+    color: rgb(0, 4, 48);
 }
