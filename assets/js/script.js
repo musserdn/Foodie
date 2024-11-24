@@ -22,7 +22,7 @@ aboutButton.addEventListener('click', () => {
 });
 
 recipeButton.addEventListener('click', () => {
-    window.location.href = 'recipe.html';
+    window.location.href = 'index.html';
 });
 
 listButton.addEventListener('click', () => {
