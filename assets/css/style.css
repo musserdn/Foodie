@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center; 
-    background-color: #FAD8A9; 
-    padding: 20px; 
+  /*  background-color: #FAD8A9; */
+    padding: 30px; 
 }
 
 #title {
@@ -13,13 +13,15 @@
 }
 
 header {
-    background-color: #FAD8A9;
+    background-image: url(../images/hamburger.jpg);
+  /*  background-color: #FAD8A9; */
     padding: 20px;
 }
 
 .ui.menu {
-   background-color: teal;
+   background-color: rgb(53, 100, 29);
 }
+
 
 #menuOptionsHeader {
     color: brown;
@@ -27,10 +29,11 @@ header {
 }
 
 .menuOptions {
-    background-color: #FAD8A9;
+    background-image: url(../images/hamburgerB.jpg);
+    /* background-color: #FAD8A9; */
     text-align: center;
     color: rgb(0, 4, 48);;
-    font-size: 35px;
+    font-size: 30px;
 }
 
 main > section {
