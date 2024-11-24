@@ -34,6 +34,15 @@ header {
     text-align: center;
     color: rgb(0, 4, 48);;
     font-size: 30px;
+    font-weight: bold;
+}
+
+.blur {
+    backdrop-filter: blur(10px);
+    position: relative;
+    padding: 5px; /* Add some padding */
+    border-radius: 10px; /* Optional: rounded corners */
+    display: inline-block; /* Makes the container fit the text */
 }
 
 main > section {
