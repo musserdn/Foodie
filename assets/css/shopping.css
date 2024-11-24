@@ -1,0 +1,37 @@
+.btn.btn-dark {
+    margin: 10px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 30px;
+}
+
+#title {
+    color: brown;
+    text-align: center;
+    font-size: 100px;
+}
+
+.ui.large.image {
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+.ui.menu {
+    background-color: black;
+}
+
+#aboutbtn {
+    color: white;
+}
+
+#recipebtn {
+    color: white;
+}
+
+#listbtn {
+    color: white;
+}
