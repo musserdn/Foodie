@@ -75,6 +75,10 @@ main > section {
     font-style: italic;
 }
 
+footer {
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     #title {
         font-size: 80px;
@@ -86,6 +90,8 @@ main > section {
 @media (max-width: 576px) {
     #title {
         font-size: 70px;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
     }
     .ui.small.image {
         width: 100px;
