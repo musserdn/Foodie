@@ -15,6 +15,8 @@ header {
     background-image: url(../images/hamburger.jpg);
     padding: 20px;
 }
+/* image custom created using open source components from google image search--> */
+
 
 .ui.menu {
    background-color: rgb(29, 88, 0);
@@ -75,7 +77,7 @@ main > section {
 
 @media (max-width: 768px) {
     #title {
-        font-size: 70px;
+        font-size: 80px;
     }
     .ui.small.image {
         width: 100px;
@@ -83,9 +85,9 @@ main > section {
 }
 @media (max-width: 576px) {
     #title {
-        font-size: 50px;
+        font-size: 70px;
     }
     .ui.small.image {
-        width: 70px;
+        width: 100px;
     }
 }
