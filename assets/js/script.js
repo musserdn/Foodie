@@ -28,7 +28,7 @@ document.querySelectorAll('.ui.long.large.modal .actions .ui.button').forEach(bu
         }
 
         localStorage.setItem('selectedRecipes', JSON.stringify(selectedRecipes));
-        $(`.ui.modal#${modalId}`).modal('hide');
+        $(`.ui.modal#${recipeId}`).modal('hide');
     });
 });
 
