@@ -1,3 +1,8 @@
+.print.icon {
+    margin-right: 20px;
+    width: 50px;
+}
+
 .btn.btn-dark {
     margin: 10px;
 }
@@ -34,6 +39,10 @@
 
 #listbtn {
     color: white;
+}
+
+footer {
+    text-align: center;
 }
 
 @media (max-width: 768px) {
