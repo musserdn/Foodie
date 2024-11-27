@@ -11,6 +11,17 @@
     font-size: 100px;
 }
 
+#explan {
+    color: rgb(85, 84, 84);
+    font-style: italic;
+    text-align: center;
+}
+
+#pick {
+    color: brown;
+    backdrop-filter: blur(10px);
+}
+
 header {
     background-image: url(../images/hamburger.jpg);
     padding: 20px;
@@ -21,6 +32,8 @@ header {
 .ui.menu {
    background-color: rgb(29, 88, 0);
    font-size: 15px;
+   margin: 0;
+   padding: 0;
 }
 
 #aboutbtn {
@@ -85,6 +98,9 @@ footer {
     }
     .ui.small.image {
         width: 100px;
+    }
+    #explan {
+        backdrop-filter: blur(10px);
     }
 }
 @media (max-width: 576px) {
