@@ -96,6 +96,12 @@ footer {
     text-align: center;
 }
 
+@media (max-width: 1120px) {
+    #done {
+        top: 500px;
+    }
+}
+
 @media (max-width: 768px) {
     #title {
         font-size: 80px;
@@ -107,7 +113,11 @@ footer {
         backdrop-filter: blur(10px);
     }
 }
-@media (max-width: 576px) {
+
+@media (max-width: 585px) {
+    #done {
+        top: 500px;
+    }
     #title {
         font-size: 70px;
         backdrop-filter: blur(10px);
@@ -115,5 +125,11 @@ footer {
     }
     .ui.small.image {
         width: 100px;
+    }
+}
+
+@media (max-width: 482px) {
+    #done {
+        top: 600px;
     }
 }
