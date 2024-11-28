@@ -1,16 +1,14 @@
 function displayIngredients() {
     const ingredientsContainer = document.getElementById('ingredientsContainer');
+    // const ingredientsContainer = document.getElementById('RecipesContainer')RecipesContainer;
 
     let ingredientsList = JSON.parse(localStorage.getItem('ingredientsList'));
-    console.log(ingredientsList);
+    console.log(ingredientsList || 'On');
 
     const recipeIngredients = document.createElement('ul');
     let ingredients = ingredientsList
     recipeIngredients.innerHTML = `<h3>Ingredients:</h3><p>${ingredientsList}</p>`;
-    for () {
-            
-
-
+    
  /*   
     document.querySelectorAll('.ui.right.floated.button').forEach(button => {
         button.addEventListener('click', function () {
