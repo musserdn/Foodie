@@ -1,3 +1,7 @@
+:root {
+    --green: rgb(29, 88, 0);
+}
+
 .header-content {
     display: flex;
     align-items: center;
@@ -36,17 +40,10 @@ header {
    padding: 0;
 }
 
-#aboutbtn {
+#aboutbtn, #recipebtn, #listbtn {
     color: white;
 }
 
-#recipebtn {
-    color: white;
-}
-
-#listbtn {
-    color: white;
-}
 
 #menuOptionsHeader {
     color: brown;
@@ -73,7 +70,14 @@ header {
 main > section {
     padding: 20px;
 }
-
+#done{
+    background-color: var(--green);
+    color: white;
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    ;
+}
 .options {
     background-color:antiquewhite;
 }

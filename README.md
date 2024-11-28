@@ -1,15 +1,15 @@
-# Foodie - Your Meal Prepping Companion
+# Foodie🍽️ 
+## You pick. We Plan. Meal Planning & List generator.
 
 ## Description
 
-- Our team was motivated to help those busy individuals more quickly come up with a variety of meals for the week. 
-- Our focus was on inspiring our users with recipes and making it easy for them to generate their grocery list for the week. 
-- Our Product solves the problem of the time commitment it takes to structure a fresh menu and generate the grocery list for busy families.
-- Our team learned that it is challenging to take recipes that have quantities and units and extract the ingredients to seamlessly create a grocery lists that is deduplicated. 
+- We make weekly shopping and meal planning a breeze.  
+- Just select your recipes and we’ll curate a shopping list for you.
+- Our app provide a way to quickly select recipes for the week and have a ready-to-go grocery list. It's a click and go, saving time and mental energy.
 
 ## Installation
 
-This product is a suite of .html, javascript, and image files. To get started, visit the last deployed version of our webpage at [GitHub pages](https://musserdn.github.io/ProjectOne/).
+This product is a suite of .html, javascript, Cascading Style Sheets (CSS), Semantic UI CSS Framework and image files. To get started, visit the last deployed version of our webpage at [GitHub pages](https://musserdn.github.io/ProjectOne/).
 
 To install locally, clone the repository from the [Github](https://github.com/musserdn/ProjectOne), pull down, and open the `index.html` file with your default browser.
 
@@ -40,6 +40,8 @@ The following individuals have contributed to this product
 - [Dan Musser](https://github.com/musserdn/)
 
 Attribution for recipe creation is provided on each recipe card.
+
+This project uses [Semantic UI](https://semantic-ui.com/) for styling and layout.
 
 ## License
 
