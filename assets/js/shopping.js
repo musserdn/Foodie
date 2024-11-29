@@ -1,7 +1,12 @@
 // variables get from localStorage and DOM
-const ingredientsList = JSON.parse(localStorage.getItem('ingredientsList')) || [];
+let ingredientsList = JSON.parse(localStorage.getItem('ingredientsList')) || [];
 const recipesContainer = document.getElementById('RecipesContainer');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
+let ingredientInfo = {
+    recipeId: "",
+    ingredients: [],
+    title: "",
+};
 
 // Display recipes
 
@@ -45,5 +50,16 @@ function displayIngredients() {
     }
 }
 
+// Clear Button
+function clearRecipes() {
+    ingredientsList = [];
+    localStorage.setItem('ingredientsList', JSON.stringify(ingredientsList));
+    recipesContainer.innerHTML = '';
+    ingredientsContainer.innerHTML = '';
+    displayIngredients();
+    displayRecipes();
+}
+
 displayRecipes(ingredientsList, recipesContainer);
 displayIngredients(ingredientsList, ingredientsContainer);
+
