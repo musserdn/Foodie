@@ -1,7 +1,12 @@
 // variables get from localStorage and DOM
-const ingredientsList = JSON.parse(localStorage.getItem('ingredientsList')) || [];
+let ingredientsList = JSON.parse(localStorage.getItem('ingredientsList')) || [];
 const recipesContainer = document.getElementById('RecipesContainer');
 const ingredientsContainer = document.getElementById('ingredientsContainer');
+let ingredientInfo = {
+    recipeId: "",
+    ingredients: [],
+    title: "",
+};
 
 // Display recipes
 
@@ -27,10 +32,11 @@ function displayRecipes() {
 
 // Display ingredients
 function displayIngredients() {
+    // Checks if the array is missing or empty, if so, displays no recipes added
     if (!ingredientsList || ingredientsList.length === 0) {
         const li = document.createElement('li');
         li.className = 'item';
-        li.textContent = "Select a receipe to get started";
+        li.textContent = "Select a recipe to get started";
         ingredientsContainer.appendChild(li);
     } else {
         // Loop through each recipe's ingredients
@@ -45,5 +51,16 @@ function displayIngredients() {
     }
 }
 
+// Clear Button
+function clearRecipes() {
+    ingredientsList = [];
+    localStorage.setItem('ingredientsList', JSON.stringify(ingredientsList));
+    recipesContainer.innerHTML = '';
+    ingredientsContainer.innerHTML = '';
+    displayIngredients();
+    displayRecipes();
+}
+
 displayRecipes(ingredientsList, recipesContainer);
 displayIngredients(ingredientsList, ingredientsContainer);
+
