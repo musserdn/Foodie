@@ -1,28 +1,49 @@
-function displayIngredients() {
-    const ingredientsContainer = document.getElementById('ingredientsContainer');
-    // const ingredientsContainer = document.getElementById('RecipesContainer')RecipesContainer;
+// variables get from localStorage and DOM
+const ingredientsList = JSON.parse(localStorage.getItem('ingredientsList')) || [];
+const recipesContainer = document.getElementById('RecipesContainer');
+const ingredientsContainer = document.getElementById('ingredientsContainer');
 
-    let ingredientsList = JSON.parse(localStorage.getItem('ingredientsList'));
-    console.log(ingredientsList || 'On');
+// Display recipes
 
-    const recipeIngredients = document.createElement('ul');
-    let ingredients = ingredientsList
-    recipeIngredients.innerHTML = `<h3>Ingredients:</h3><p>${ingredientsList}</p>`;
-    
- /*   
-    document.querySelectorAll('.ui.right.floated.button').forEach(button => {
-        button.addEventListener('click', function () {
-            console.log("clicked");
-
-            for (const [recipeId, ingredients] of Object.entries(ingredientsList)) {
-                const recipeIngredients = document.createElement('div');
-                recipeIngredients.innerHTML = `<h3>Ingredients for ${recipeId}:</h3><p>${ingredients}</p>`;
-                ingredientsContainer.appendChild(recipeIngredients);
-            }
+function displayRecipes() {
+    // Checks if the array is missing or empty, if so, displays no recipes added
+    if (!ingredientsList || ingredientsList.length === 0) {
+        const li = document.createElement('li');
+        li.className = 'item';
+        li.textContent = "No recipes added";
+        recipesContainer.appendChild(li);
+    }
+    // Create elements for each recipe
+    else {
+        ingredientsList.forEach(recipe => {
+            const li = document.createElement('li');
+            li.className = 'item';
+            li.textContent = recipe.title;
+            recipesContainer.appendChild(li);
         });
-    });
+    }
 }
-*/
 
+
+// Display ingredients
+function displayIngredients() {
+    if (!ingredientsList || ingredientsList.length === 0) {
+        const li = document.createElement('li');
+        li.className = 'item';
+        li.textContent = "Select a receipe to get started";
+        ingredientsContainer.appendChild(li);
+    } else {
+        // Loop through each recipe's ingredients
+        ingredientsList.forEach(recipe => {
+            recipe.ingredients.forEach(ingredient => {
+                const li = document.createElement('li');
+                li.className = 'item';
+                li.textContent = ingredient;
+                ingredientsContainer.appendChild(li);
+            });
+        })
+    }
 }
-displayIngredients();
+
+displayRecipes(ingredientsList, recipesContainer);
+displayIngredients(ingredientsList, ingredientsContainer);

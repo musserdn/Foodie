@@ -1,82 +1,78 @@
-// document.getElementById('CF1').addEventListener('click', function() {
-// $('#CFM1').modal('show');
-// });
-// document.getElementById('CF2').addEventListener('click', function() {
-// $('#CFM2').modal('show');
-// });
-// Event listener to all elements starting with 'CF' to open the modals
-
+// Event listeners for all modal buttons
 document.querySelectorAll('[id^="CF"]').forEach(element => {
     element.addEventListener('click', function () {
         const modalNumber = this.id.replace('CF', '');
         $(`#CFM${modalNumber}`).modal('show');
     });
 });
-// Event listeners for all modal buttons
-let selectedRecipes = JSON.parse(localStorage.getItem('selectedRecipes')) || [];
-//let ingredientsList = JSON.parse(localStorage.getItem('ingredientsList')) || [];
-let ingredientsList = [];
+// pull ingredientsList Object from local storage if it exists, else create an empty array
+let ingredientsList = JSON.parse(localStorage.getItem('ingredientsList')) || [];
+// let ingredientsList = [];
 let ingredientInfo = {
     recipeId: "",
     ingredients: [],
     title: "",
 };
 
-// This listens to button click for the any action button in the modal
-document.querySelectorAll('.ui.long.large.modal .actions .ui.button').forEach(button => {
-    button.addEventListener('click', function () {
-        //this gets the recipe id from the modal
-        ingredientInfo.recipeId = this.closest('.ui.long.large.modal').id;
-        //this gets the recipe title from the modal
-        ingredientInfo.title = this.parentElement.parentElement.parentElement.children[1].innerText;
+// This listens to button click for the any Add button in the modal
+document.querySelectorAll('.ui.long.large.modal .plus').forEach(addButton => {
+    addButton.addEventListener('click', function () {
+        // Create new object for each click to prevent overwriting prior clicked recipes
+        const newIngredientInfo = {
+            recipeId: '',
+            title: '',
+            ingredients: []
+        };
 
+        // Get recipe details
+        newIngredientInfo.recipeId = this.closest('.ui.long.large.modal').id;
+        newIngredientInfo.title = this.parentElement.parentElement.parentElement.children[1].innerText;
 
+        // Check if recipe already exists
+        const recipeExists = ingredientsList.some(recipe => recipe.recipeId === newIngredientInfo.recipeId);
 
-        // // loops through to Extract ingredients from recipes:
-        const ingredients = document.querySelectorAll(`#${ingredientInfo.recipeId} .description ul li`).forEach((li) => {
-            
+        if (!recipeExists) {
+            // Extract ingredients
+            document.querySelectorAll(`#${newIngredientInfo.recipeId} .description ul li`).forEach((li) => {
+                const span = li.querySelector('.ing');
+                const trimmedText = li.textContent.replace(span.textContent, '').trim();
 
+                if (!newIngredientInfo.ingredients.includes(trimmedText)) {
+                    newIngredientInfo.ingredients.push(trimmedText);
+                }
+            });
 
-            const span = li.querySelector('.ing');
-            //removes the text within the span and trims to remove extra spaces
-            const trimmedText = li.textContent.replace(span.textContent, '').trim()
-            //    add if to prevent duplicates 
-            if (!ingredientInfo.ingredients.includes(trimmedText)) {
-                ingredientInfo.ingredients.push(trimmedText);
-            }
-            
-        })
-        //this pushes the ingredientsInfo object to the ingredientsList array
-        ingredientsList.push(ingredientInfo);
-
-        
-
-
-
-
-        // add to local storage
-
-
-
-
-
-        //    if (this.classList.contains('plus')) {
-        //         if (!selectedRecipes.includes(recipeId)) {
-        //             selectedRecipes.push(recipeId);
-        //             ingredientsList[recipeId] = ingredients; // Store ingredients with recipe ID
-        //         }
-        //     } else if (this.classList.contains('minus')) {
-        //         selectedRecipes = selectedRecipes.filter(id => id !== recipeId);
-        //         delete ingredientsList[recipeId]; // Remove ingredients if recipe is deselected
-        //     }
-
-        //      localStorage.setItem('selectedRecipes', JSON.stringify(selectedRecipes));
-        //     localStorage.setItem('ingredientsList', JSON.stringify(ingredientsList)); // Save ingredients to local storage
-        //     $(`.ui.modal#${recipeId}`).modal('hide');
+            // Add to list and update storage
+            ingredientsList.push(newIngredientInfo);
+            localStorage.setItem('ingredientsList', JSON.stringify(ingredientsList));
+            console.log('Added new recipe:', newIngredientInfo);
+            $(`#${newIngredientInfo.recipeId}`).modal('hide');
+        } else {
+            console.log('Recipe already exists');
+        }
     });
 });
 
-console.log(selectedRecipes);
+// Add event listener to minus buttons
+document.querySelectorAll('.ui.long.large.modal .minus').forEach(minusbutton => {
+    minusbutton.addEventListener('click', function () {
+        // Get recipe ID from modal
+        const recipeId = this.closest('.ui.long.large.modal').id;
+
+        // Find index of recipe to remove
+        const recipeIndex = ingredientsList.findIndex(recipe => recipe.recipeId === recipeId);
+
+        // Remove recipe if found
+        if (recipeIndex !== -1) {
+            ingredientsList.splice(recipeIndex, 1);
+            localStorage.setItem('ingredientsList', JSON.stringify(ingredientsList))
+            console.log(`Removed recipe with ID: ${recipeId}`);
+            console.log('Updated ingredientsList:', ingredientsList);
+            $(`#${recipeId}`).modal('hide');
+        }
+    });
+});
+
 console.log(ingredientsList);
 
 document.getElementById('done').addEventListener('click', function () {
@@ -84,25 +80,3 @@ document.getElementById('done').addEventListener('click', function () {
     window.location.href = 'shopping.html';
     console.log("clicked");
 });
-
-/*
-
-function displayIngredients() {
-    const ingredientsContainer = document.getElementById('ingredientsContainer');
-
-    document.querySelectorAll('.ui.right.floated.button').forEach(button => {
-        button.addEventListener('click', function () {
-            console.log("clicked");
-
-            for (const [recipeId, ingredients] of Object.entries(ingredientsList)) {
-                const recipeIngredients = document.createElement('div');
-                recipeIngredients.innerHTML = `<h3>Ingredients for ${recipeId}:</h3><p>${ingredients}</p>`;
-                ingredientsContainer.appendChild(recipeIngredients);
-            }
-        });
-    });
-}
-
-displayIngredients();
-
-*/

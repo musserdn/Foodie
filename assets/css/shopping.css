@@ -1,68 +1,65 @@
-.print.icon {
-    margin-right: 20px;
-    width: 50px;
-}
-
-.btn.btn-dark {
-    margin: 10px;
-}
-
+/* Classes */
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     padding: 30px;
-}
-
-#title {
-    color: brown;
-    text-align: center;
-    font-size: 100px;
-}
-
-.ui.large.image {
-    margin-left: 20px;
-    margin-bottom: 30px;
 }
 
 .ui.menu {
     background-color: black;
 }
 
-#aboutbtn {
-    color: white;
+.ui.large.image {
+    margin-left: 20px;
 }
 
-#recipebtn {
-    color: white;
-}
-
-#listbtn {
-    color: white;
+.print.icon {
+    margin-right: 20px;
+    width: 50px;
 }
 
 footer {
     text-align: center;
 }
 
+/* IDs */
+#title {
+    color: brown;
+    text-align: center;
+    font-size: 100px;
+}
+
+#aboutbtn,
+#recipebtn,
+#listbtn {
+    color: white;
+}
+
+/* Media Queries */
 @media (max-width: 768px) {
     #title {
         font-size: 50px;
     }
+
     .ui.large.image {
         width: 100px;
     }
+
     .ui.small.image {
         width: 100px;
     }
 }
+
 @media (max-width: 576px) {
     #title {
         font-size: 30px;
     }
+
     .ui.large.image {
         width: 100px;
     }
+
     .ui.small.image {
         width: 100px;
     }

@@ -1,14 +1,71 @@
+/* Define global variables */
 :root {
     --green: rgb(29, 88, 0);
+}
+
+/* Classes */
+header {
+    background-image: url(../images/hamburger.jpg);
+    /* image custom created using open source components from google image search--> */
+    padding: 20px;
 }
 
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     padding: 30px;
 }
 
+main>section {
+    padding: 20px;
+}
+
+.ui.menu {
+    background-color: rgb(29, 88, 0);
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.menuOptions {
+    background-image: url(../images/hamburgerB.jpg);
+    text-align: center;
+    color: rgb(0, 4, 48);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.blur {
+    backdrop-filter: blur(10px);
+    position: relative;
+    padding: 5px;
+    /* Add some padding */
+    border-radius: 10px;
+    /* Optional: rounded corners */
+    display: inline-block;
+    /* Makes the container fit the text */
+}
+
+.options {
+    background-color: antiquewhite;
+}
+
+.ui.header.foodTitles {
+    color: brown;
+    font-size: 30px;
+}
+
+.foodTitlesDescriptions {
+    font-size: 20px;
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+}
+
+/* IDs */
 #title {
     color: brown;
     text-align: center;
@@ -26,76 +83,26 @@
     backdrop-filter: blur(10px);
 }
 
-header {
-    background-image: url(../images/hamburger.jpg);
-    padding: 20px;
-}
-/* image custom created using open source components from google image search--> */
-
-
-.ui.menu {
-   background-color: rgb(29, 88, 0);
-   font-size: 15px;
-   margin: 0;
-   padding: 0;
-}
-
-#aboutbtn, #recipebtn, #listbtn {
+#aboutbtn,
+#recipebtn,
+#listbtn {
     color: white;
 }
-
 
 #menuOptionsHeader {
     color: brown;
     font-size: 50px;
 }
 
-.menuOptions {
-    background-image: url(../images/hamburgerB.jpg);
-    /* background-color: #FAD8A9; */
-    text-align: center;
-    color: rgb(0, 4, 48);;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.blur {
-    backdrop-filter: blur(10px);
-    position: relative;
-    padding: 5px; /* Add some padding */
-    border-radius: 10px; /* Optional: rounded corners */
-    display: inline-block; /* Makes the container fit the text */
-}
-
-main > section {
-    padding: 20px;
-}
-#done{
+#done {
     background-color: var(--green);
     color: white;
     position: fixed;
     top: 50%;
     right: 20px;
-    ;
-}
-.options {
-    background-color:antiquewhite;
 }
 
-.foodTitles {
-    color: brown;
-    font-size: 30px;
-}
-
-.foodTitlesDescriptions {
-    font-size: 20px;
-    font-style: italic;
-}
-
-footer {
-    text-align: center;
-}
-
+/* Media Queries */
 @media (max-width: 1120px) {
     #done {
         top: 500px;
@@ -106,9 +113,11 @@ footer {
     #title {
         font-size: 80px;
     }
+
     .ui.small.image {
         width: 100px;
     }
+
     #explan {
         backdrop-filter: blur(10px);
     }
@@ -118,11 +127,13 @@ footer {
     #done {
         top: 500px;
     }
+
     #title {
         font-size: 70px;
         backdrop-filter: blur(10px);
         border-radius: 10px;
     }
+
     .ui.small.image {
         width: 100px;
     }
