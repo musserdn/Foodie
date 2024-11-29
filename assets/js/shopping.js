@@ -32,10 +32,11 @@ function displayRecipes() {
 
 // Display ingredients
 function displayIngredients() {
+    // Checks if the array is missing or empty, if so, displays no recipes added
     if (!ingredientsList || ingredientsList.length === 0) {
         const li = document.createElement('li');
         li.className = 'item';
-        li.textContent = "Select a receipe to get started";
+        li.textContent = "Select a recipe to get started";
         ingredientsContainer.appendChild(li);
     } else {
         // Loop through each recipe's ingredients
