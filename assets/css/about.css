@@ -19,6 +19,7 @@ background-color:rgba(28, 174, 9, 0.914);
 font-size:  20px; 
 color: rgba(1, 8, 2, 0.799);
 margin: bottom 50px;
+text-align: left;
 }
 .about-us { 
 display:flex;
@@ -50,8 +51,14 @@ margin: 15px Opx;
     cursor: pointer;
     transition:0.2 ease ;
 }
-.read-more-btn :hover{
- background-color: rgba(232, 232, 11, 0.767);
+
+
+#getStarted{
+    background-color: rgb(29, 88 ,0 );
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
  @media (max-width:768px) {
